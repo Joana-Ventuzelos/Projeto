@@ -1,0 +1,4 @@
+Para implementar:
+
+-> Códigos para funções individuais;
+-> Guardar recibo em ficheiro txt;
