@@ -2,3 +2,7 @@ Para implementar:
 
 -> Códigos para funções individuais;
 -> Guardar recibo em ficheiro txt;
+-> Por cores nos menus;
+-> Implementar try_parse nas quantidades;
+-> Fazer comentários;
+ 
