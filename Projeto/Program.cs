@@ -1,4 +1,5 @@
 ﻿using System;
+using Projeto;
 
 namespace EmpreendimentoTuristico
 {
@@ -156,8 +157,10 @@ namespace EmpreendimentoTuristico
             Console.WriteLine("|-----------------------------------|");
             Console.WriteLine("|-----------------------------------|");
 
-            subtotal = valorTotEst + valorAcumulado;
-            taxaServico = 0.1 * subtotal;
+            //subtotal =  valorTotEst + valorAcumulado;
+            subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
+            taxaServico = Functions.TaxaServico(subtotal,0.1);
+            //taxaServico = 0.1 * subtotal;
             total = subtotal + taxaServico;
 
             Console.WriteLine("|-----------------------------------|");
