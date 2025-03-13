@@ -77,11 +77,6 @@ namespace EmpreendimentoTuristico
                 }
             } while (!sucesso);
 
-
-
-
-
-
             while (diasEstadia < 0)
             {
                 Console.WriteLine("Duração inválida!");
