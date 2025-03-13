@@ -68,12 +68,13 @@ namespace EmpreendimentoTuristico
             bool sucesso;
             do
             {
-                Console.WriteLine("Duração Estadia ");
+                Console.WriteLine("Duração Estadia: ");
                 string input = Console.ReadLine();
                 sucesso = double.TryParse(input, out diasEstadia);
                 if (sucesso != true)
                 {
-                    Console.WriteLine("Duração Inválida");
+                    Console.WriteLine("Duração Inválida!");
+                    Console.WriteLine("Digite outra duração: ");
                 }
             } while (!sucesso);
             //Aplicar o desconto conforme a quantidade de dias
@@ -125,8 +126,9 @@ namespace EmpreendimentoTuristico
                 Console.WriteLine("| SAIR            | 106    | ----   |");
                 Console.WriteLine("|-----------------|--------|--------|");
 
-                Console.Write("Qual o código de item? ");
-                codigoProduto = Convert.ToInt32(Console.ReadLine());
+                //Console.Write("Qual o código de item? ");
+                //codigoProduto = Convert.ToInt32(Console.ReadLine());
+                codigoProduto = Functions.TryParse1();
                 if (codigoProduto == 106) break;
 
                 Console.Write("Qual a quantidade consumida? ");
@@ -170,11 +172,9 @@ namespace EmpreendimentoTuristico
             Console.WriteLine("|-----------------------------------|");
             Console.WriteLine("|-----------------------------------|");
 
-            //subtotal =  valorTotEst + valorAcumulado;
             subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
             taxaServico = Functions.TaxaServico(subtotal,0.1);
             total = subtotal + taxaServico;
-           
 
             Console.WriteLine("|-----------------------------------|");
             Console.WriteLine("|      Recibo      |                |");

@@ -14,5 +14,30 @@ namespace Projeto
         {
             return subtotal * taxa;
         }
+
+        public static int TryParse1()
+        {
+         bool check;
+         int codigoProduto;
+            do
+            {
+                Console.Write("Qual o código de item? ");
+                string input = Console.ReadLine();
+                check = int.TryParse(input, out codigoProduto);
+                if (check != true)
+                {
+                    Console.WriteLine("Código de item inválido!");
+                    Console.WriteLine("Digite outro código: ");
+                }
+            } while (!check);
+            return codigoProduto;
+        }
+
+
+
+
+
+
+
     }
 }
