@@ -126,13 +126,11 @@ namespace EmpreendimentoTuristico
                 Console.WriteLine("| SAIR            | 106    | ----   |");
                 Console.WriteLine("|-----------------|--------|--------|");
 
-                //Console.Write("Qual o código de item? ");
-                //codigoProduto = Convert.ToInt32(Console.ReadLine());
+
                 codigoProduto = Functions.TryParse1();
                 if (codigoProduto == 106) break;
 
-                Console.Write("Qual a quantidade consumida? ");
-                quantidade = Convert.ToDouble(Console.ReadLine());
+                quantidade = Functions.TryParse2();
                 //Escolher o código do artigo e a quantidade deste
                 switch (codigoProduto)
                 {
