@@ -30,8 +30,8 @@ namespace EmpreendimentoTuristico
             Console.WriteLine("| Tipo de Apartamento | Preço          |");
             Console.WriteLine("|---------------------|----------------|");
             Console.WriteLine("|          A          | 150.00€        |");
-            Console.WriteLine("|          B          | 100.00€        |");
-            Console.WriteLine("|          C          | 75.00€         |");
+            Console.WriteLine("|          B          | 75.00€         |");
+            Console.WriteLine("|          C          | 100.00€        |");
             Console.WriteLine("|          D          | 150.00€        |");
             Console.WriteLine("|---------------------|----------------|");
 
@@ -51,10 +51,10 @@ namespace EmpreendimentoTuristico
                     custoApartamento = 150;
                     break;
                 case "B":
-                    custoApartamento = 100;
+                    custoApartamento = 75;
                     break;
                 case "C":
-                    custoApartamento = 75;
+                    custoApartamento = 100;
                     break;
                 case "D":
                     custoApartamento = 150;
