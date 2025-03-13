@@ -33,6 +33,23 @@ namespace Projeto
             return codigoProduto;
         }
 
+        public static double TryParse2()
+        {
+         bool check;
+         double quantidade;
+            do
+            {
+                Console.Write("Qual é a quantidade consumida? ");
+                string input = Console.ReadLine();
+                check = double.TryParse(input, out quantidade);
+                if (check != true)
+                {
+                    Console.WriteLine("Quantidade inválida!");
+                    Console.WriteLine("Digite outra quantidade: ");
+                }
+            } while (!check);
+            return quantidade;
+
 
 
 
