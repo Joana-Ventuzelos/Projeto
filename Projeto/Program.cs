@@ -161,6 +161,7 @@ namespace EmpreendimentoTuristico
             subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
             taxaServico = Functions.TaxaServico(subtotal,0.1);
             total = subtotal + taxaServico;
+            // Quero Testar umas coisas
 
             Console.WriteLine("|-----------------------------------|");
             Console.WriteLine("|      Recibo      |                |");
