@@ -7,4 +7,20 @@ Para implementar:
 -> Fazer comentários;
  -> try_parse
 
- 
+Console.Write("Duração da estadia: ");
+            diasEstadia = Convert.ToDouble(Console.ReadLine());
+
+
+
+bool sucesso;
+            do
+            {
+                Console.WriteLine("Duração Estadia ");
+                input = Console.ReadLine();
+                sucesso = double.TryParse(input, out double diasEstadia);
+                if (sucesso != true)
+                {
+                    Console.WriteLine("Duração Inválida");
+                }
+
+            } while (!sucesso);

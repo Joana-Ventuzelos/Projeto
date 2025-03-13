@@ -61,8 +61,26 @@ namespace EmpreendimentoTuristico
                     break;
             }
 
-            Console.Write("Duração da estadia: ");
-            diasEstadia = Convert.ToDouble(Console.ReadLine());
+            //Console.Write("Duração da estadia: ");
+            //diasEstadia = Convert.ToDouble(Console.ReadLine());
+
+            // Ciclo para evitar que utilizador digite uma duração de estadia errada.
+            bool sucesso;
+            do
+            {
+                Console.WriteLine("Duração Estadia ");
+                string input = Console.ReadLine();
+                sucesso = double.TryParse(input, out diasEstadia);
+                if (sucesso != true)
+                {
+                    Console.WriteLine("Duração Inválida");
+                }
+            } while (!sucesso);
+
+
+
+
+
 
             while (diasEstadia < 0)
             {
