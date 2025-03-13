@@ -129,6 +129,11 @@ namespace EmpreendimentoTuristico
 
                 codigoProduto = Functions.TryParse1();
                 if (codigoProduto == 106) break;
+                if (codigoProduto < 100||codigoProduto > 106)
+              {
+               Console.WriteLine("Código de produto inválido! Tente novamente.");
+               continue; 
+               }
 
                 quantidade = Functions.TryParse2();
                 //Escolher o código do artigo e a quantidade deste
