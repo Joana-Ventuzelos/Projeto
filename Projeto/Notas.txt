@@ -5,4 +5,6 @@ Para implementar:
 -> Por cores nos menus;
 -> Implementar try_parse nas quantidades;
 -> Fazer comentários;
+ -> try_parse
+
  

@@ -160,7 +160,6 @@ namespace EmpreendimentoTuristico
             //subtotal =  valorTotEst + valorAcumulado;
             subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
             taxaServico = Functions.TaxaServico(subtotal,0.1);
-            //taxaServico = 0.1 * subtotal;
             total = subtotal + taxaServico;
 
             Console.WriteLine("|-----------------------------------|");
