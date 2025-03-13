@@ -8,8 +8,6 @@ namespace EmpreendimentoTuristico
         static void Main(string[] args)
         {
             Console.WriteLine(ExercicioAvaliacao());
-            Console.WriteLine("Pressione qualquer tecla para sair...");
-
         }
 
         static string ExercicioAvaliacao()
@@ -19,12 +17,15 @@ namespace EmpreendimentoTuristico
             int codigoProduto;
             double aPagar, valorAcumulado = 0, quantidade;
             double taxaServico, subtotal, total;
+            
             // Defenir o preço do apartamento escolhido
             Console.WriteLine("|--------------------------------------|");
             Console.WriteLine("| Empreendimento Turístico - Check-Out |");
             Console.WriteLine("|--------------------------------------|");
-            Console.Write("Nome do Cliente: ");
+            Console.Write("| Nome do Cliente: \t");
             nome = Console.ReadLine();
+
+            Console.WriteLine("                                        ");
 
             Console.WriteLine("|---------------------|----------------|");
             Console.WriteLine("| Tipo de Apartamento | Preço          |");
@@ -35,13 +36,13 @@ namespace EmpreendimentoTuristico
             Console.WriteLine("|          D          | 150.00€        |");
             Console.WriteLine("|---------------------|----------------|");
 
-            Console.Write("Qual o tipo de apartamento escolhido pelo cliente: ");
+            Console.Write("\nQual o tipo de apartamento escolhido pelo cliente: ");
             apartamento = Console.ReadLine().ToUpper();
 
             while (apartamento != "A" && apartamento != "B" && apartamento != "C" && apartamento != "D")
             {
                 Console.WriteLine("Opção inválida!");
-                Console.Write("Digite outra opção: ");
+                Console.Write("\nQual o tipo de apartamento escolhido pelo cliente: ");
                 apartamento = Console.ReadLine().ToUpper();
             }
             
@@ -60,56 +61,30 @@ namespace EmpreendimentoTuristico
                     custoApartamento = 150;
                     break;
             }
-
-            //Console.Write("Duração da estadia: ");
-            //diasEstadia = Convert.ToDouble(Console.ReadLine());
-
-            // Ciclo para evitar que utilizador digite uma duração de estadia errada.
-            bool sucesso;
-            do
-            {
-                Console.WriteLine("Duração Estadia: ");
-                string input = Console.ReadLine();
-                sucesso = double.TryParse(input, out diasEstadia);
-                if (sucesso != true)
-                {
-                    Console.WriteLine("Duração Inválida!");
-                    Console.WriteLine("Digite outra duração: ");
-                }
-            } while (!sucesso);
-            //Aplicar o desconto conforme a quantidade de dias
-            while (diasEstadia < 0)
-            {
-                Console.WriteLine("Duração inválida!");
-                Console.Write("Duração da estadia: ");
-                diasEstadia = Convert.ToDouble(Console.ReadLine());
-            }
+            // Obter os dias de estadia! Verifica se o utlizador não coloca nada anormal.
+            diasEstadia = Functions.TryParseEstadia();
+            Console.WriteLine($"\nEstadia completa de {diasEstadia} dias!");
 
             if (diasEstadia > 7 && diasEstadia <= 15)
             {
-                Console.WriteLine($"Estadia completa de {diasEstadia} dias!");
                 Console.WriteLine("Como recompensa terá um desconto de 5%");
                 valorTotEst = custoApartamento * diasEstadia * 0.95;
                 valorDesconto = custoApartamento * diasEstadia * 0.05;
             }
             else if (diasEstadia > 15)
             {
-                Console.WriteLine($"Estadia completa de {diasEstadia} dias!");
                 Console.WriteLine("Como recompensa terá um desconto de 10%");
                 valorTotEst = custoApartamento * diasEstadia * 0.90;
                 valorDesconto = custoApartamento * diasEstadia * 0.10;
             }
             else
             {
-                Console.WriteLine($"Estadia completa de {diasEstadia} dias!");
                 valorTotEst = custoApartamento * diasEstadia;
                 valorDesconto = 0;
             }
 
             Console.WriteLine("|-----------------------------------|");
-
-            Console.WriteLine("Artigos Consumidos");
-            Console.WriteLine("(Pressione qualquer tecla após o código 106 para sair)");
+            Console.WriteLine("|        Artigos Consumidos         |");
             valorAcumulado = 0;
             //Loop para permitir a entrada de múltiplos artigos
             do
@@ -128,12 +103,12 @@ namespace EmpreendimentoTuristico
 
 
                 codigoProduto = Functions.TryParse1();
-                if (codigoProduto == 106) break;
-                if (codigoProduto < 100||codigoProduto > 106)
-              {
-               Console.WriteLine("Código de produto inválido! Tente novamente.");
-               continue; 
-               }
+                if (codigoProduto == 106) break; // SAIR
+                if (codigoProduto < 100 || codigoProduto > 106)
+                {
+                    Console.WriteLine("\nCódigo de produto inválido!\n");
+                    continue; 
+                }
 
                 quantidade = Functions.TryParse2();
                 //Escolher o código do artigo e a quantidade deste
@@ -172,15 +147,15 @@ namespace EmpreendimentoTuristico
                 }
             } while (codigoProduto != 106);
 
-            Console.WriteLine("|-----------------------------------|");
-            Console.WriteLine("|-----------------------------------|");
+            Console.WriteLine("\n\n");
+    
 
             subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
             taxaServico = Functions.TaxaServico(subtotal,0.1);
             total = subtotal + taxaServico;
 
             Console.WriteLine("|-----------------------------------|");
-            Console.WriteLine("|      Recibo      |                |");
+            Console.WriteLine("|              *RECIBO*             |");
             Console.WriteLine("|-----------------------------------|");
 
             Console.WriteLine($"| Nome Cliente: {nome} ");
@@ -193,10 +168,10 @@ namespace EmpreendimentoTuristico
             Console.WriteLine($"| Taxa de Serviço (10% do subtotal): {taxaServico}€");
             Console.WriteLine($"| Sub-total: {subtotal}€");
             Console.WriteLine("|-----------------------------------|");
-            Console.WriteLine($"| Total Geral: {total}€");
+            Console.WriteLine($"| Total Geral: {total}€             ");
             Console.WriteLine("|-----------------------------------|");
 
-            return "Check-out completo: Obrigado pela sua estadia!";
+            return "\n Check-out completo: Obrigado pela sua estadia!";
         }
     }
 }
