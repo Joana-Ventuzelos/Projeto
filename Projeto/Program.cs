@@ -19,7 +19,7 @@ namespace EmpreendimentoTuristico
             int codigoProduto;
             double aPagar, valorAcumulado = 0, quantidade;
             double taxaServico, subtotal, total;
-
+            // Defenir o preço do apartamento escolhido
             Console.WriteLine("|--------------------------------------|");
             Console.WriteLine("| Empreendimento Turístico - Check-Out |");
             Console.WriteLine("|--------------------------------------|");
@@ -44,7 +44,7 @@ namespace EmpreendimentoTuristico
                 Console.Write("Digite outra opção: ");
                 apartamento = Console.ReadLine().ToUpper();
             }
-
+            
             switch (apartamento)
             {
                 case "A":
@@ -76,7 +76,7 @@ namespace EmpreendimentoTuristico
                     Console.WriteLine("Duração Inválida");
                 }
             } while (!sucesso);
-
+            //Aplicar o desconto conforme a quantidade de dias
             while (diasEstadia < 0)
             {
                 Console.WriteLine("Duração inválida!");
@@ -110,7 +110,7 @@ namespace EmpreendimentoTuristico
             Console.WriteLine("Artigos Consumidos");
             Console.WriteLine("(Pressione qualquer tecla após o código 106 para sair)");
             valorAcumulado = 0;
-
+            //Loop para permitir a entrada de múltiplos artigos
             do
             {
                 Console.WriteLine("|-----------------|--------|--------|");
@@ -131,7 +131,7 @@ namespace EmpreendimentoTuristico
 
                 Console.Write("Qual a quantidade consumida? ");
                 quantidade = Convert.ToDouble(Console.ReadLine());
-
+                //Escolher o código do artigo e a quantidade deste
                 switch (codigoProduto)
                 {
                     case 100:
@@ -174,7 +174,7 @@ namespace EmpreendimentoTuristico
             subtotal= Functions.Subtotal(valorTotEst,valorAcumulado);
             taxaServico = Functions.TaxaServico(subtotal,0.1);
             total = subtotal + taxaServico;
-            // Quero Testar umas coisas
+           
 
             Console.WriteLine("|-----------------------------------|");
             Console.WriteLine("|      Recibo      |                |");
