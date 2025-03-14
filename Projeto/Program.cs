@@ -185,6 +185,7 @@ namespace EmpreendimentoTuristico
                 taxaServico,
                 subtotal,
                 total);
+                // TESTE
             return "\n Check-out completo: Obrigado pela sua estadia!";
         }
     }
