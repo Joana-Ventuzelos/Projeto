@@ -173,6 +173,18 @@ namespace EmpreendimentoTuristico
             Console.WriteLine($"| Total Geral: {total:F2}€             ");
             Console.WriteLine("|-----------------------------------|");
 
+
+            Functions.Imprime_Recibo(
+                nome,
+                apartamento,
+                diasEstadia,
+                custoApartamento,
+                valorDesconto,
+                valorTotEst,
+                valorAcumulado,
+                taxaServico,
+                subtotal,
+                total);
             return "\n Check-out completo: Obrigado pela sua estadia!";
         }
     }
