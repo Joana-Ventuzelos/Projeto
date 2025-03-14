@@ -8,6 +8,7 @@ namespace EmpreendimentoTuristico
         static void Main(string[] args)
         {
             Console.WriteLine(ExercicioAvaliacao());
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
         }
 
         static string ExercicioAvaliacao()
