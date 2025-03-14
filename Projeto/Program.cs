@@ -19,6 +19,7 @@ namespace EmpreendimentoTuristico
             double taxaServico, subtotal, total;
             
             // Defenir o preço do apartamento escolhido
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("|--------------------------------------|");
             Console.WriteLine("| Empreendimento Turístico - Check-Out |");
             Console.WriteLine("|--------------------------------------|");
@@ -161,14 +162,14 @@ namespace EmpreendimentoTuristico
             Console.WriteLine($"| Nome Cliente: {nome} ");
             Console.WriteLine($"| Tipo do Apartamento: {apartamento} ");
             Console.WriteLine($"| Numero de dias da estadia: {diasEstadia} ");
-            Console.WriteLine($"| Valor unitário da diaria: {custoApartamento}€");
-            Console.WriteLine($"| Desconto Aplicado: {valorDesconto}€");
-            Console.WriteLine($"| Valor total da diária: {valorTotEst}€");
-            Console.WriteLine($"| Valor do Consumo Interno: {valorAcumulado}€");
-            Console.WriteLine($"| Taxa de Serviço (10% do subtotal): {taxaServico}€");
-            Console.WriteLine($"| Sub-total: {subtotal}€");
+            Console.WriteLine($"| Valor unitário da diaria: {custoApartamento:F2}€");
+            Console.WriteLine($"| Desconto Aplicado: {valorDesconto:F2}€");
+            Console.WriteLine($"| Valor total da diária: {valorTotEst:F2}€");
+            Console.WriteLine($"| Valor do Consumo Interno: {valorAcumulado:F2}€");
+            Console.WriteLine($"| Taxa de Serviço (10% do subtotal): {taxaServico:F2}€");
+            Console.WriteLine($"| Sub-total: {subtotal:F2}€");
             Console.WriteLine("|-----------------------------------|");
-            Console.WriteLine($"| Total Geral: {total}€             ");
+            Console.WriteLine($"| Total Geral: {total:F2}€             ");
             Console.WriteLine("|-----------------------------------|");
 
             return "\n Check-out completo: Obrigado pela sua estadia!";
