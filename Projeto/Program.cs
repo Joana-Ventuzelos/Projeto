@@ -8,12 +8,11 @@ namespace EmpreendimentoTuristico
         static void Main(string[] args)
         {
             Console.WriteLine(ExercicioAvaliacao());
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            //
         }
 
         static string ExercicioAvaliacao()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             string nome, apartamento;
             double custoApartamento = 0, diasEstadia, valorDesconto = 0, valorTotEst = 0;
             int codigoProduto;
@@ -21,7 +20,7 @@ namespace EmpreendimentoTuristico
             double taxaServico, subtotal, total;
             
             // Defenir o preço do apartamento escolhido
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("|--------------------------------------|");
             Console.WriteLine("| Empreendimento Turístico - Check-Out |");
             Console.WriteLine("|--------------------------------------|");
