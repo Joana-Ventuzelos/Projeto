@@ -95,7 +95,7 @@ namespace Projeto
             writer.WriteLine($"| Nome Cliente: {nome} ");
             writer.WriteLine($"| Tipo do Apartamento: {apartamento} ");
             writer.WriteLine($"| Numero de dias da estadia: {diasEstadia} ");
-            writer.WriteLine($"| Valor unitário da diaria: {custoApartamento:F2}€");
+            writer.WriteLine($"| Valor unitário da diária: {custoApartamento:F2}€");
             writer.WriteLine($"| Desconto Aplicado: {valorDesconto:F2}€");
             writer.WriteLine($"| Valor total da diária: {valorTotEst:F2}€");
             writer.WriteLine($"| Valor do Consumo Interno: {valorAcumulado:F2}€");
